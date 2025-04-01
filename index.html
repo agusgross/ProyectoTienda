@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
-    <!-- JS -->
-    <script defer src="./js/main.js"></script>
-    <title>Carrito de compras de tienda de libros</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="index.css">
+	<script src="./js/libros.js"></script>
+	<script src="./js/cartService.js" defer></script>
+	<script src="./js/index.js" defer></script>
+	<title>Tienda de Libros</title>
 </head>
 <body>
-    <h1>Tienda de libros</h1>
-    <div id="librosDisponibles"></div>
-        <div>
-            <h2>Carrito</h2>
-            <div id="contenidoCarrito"></div>
-            <p id="totalCarrito"></p>
-            <button id="finalizarCompra">Finalizar Compra</button>
+	<header>
+		<nav>
+			<a href="./index.html"><img src="./img/logo.png" alt="Logo" id="logo"></a>
+			<div>
+				
+				<a href="./cart.html" id="cart"><img src="./img/iconos/shopping-cart.png" alt=""><span id="cuenta-carrito">0</span></a>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section id="productos-container">
+		</section>
+	</main>
+	
 </body>
 </html>
