@@ -1,8 +1,27 @@
 const cuentaCarritoElement = document.getElementById("cuenta-carrito");
 const keyLocalstorage = "libros"
 
-
 function agregarAlCarrito(producto){
+
+  Toastify({
+    text: "Producto agregado",
+    duration: 3000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: " #ee6130",
+      borderRadius: "2rem",
+      textTransform: "uppercase",
+      fontSize: ".75rem"
+    },
+    offset: {
+        x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      },
+    onClick: function(){} // Callback after click
+  }).showToast();
 
   let memoria = JSON.parse(localStorage.getItem(keyLocalstorage));
   let cantidadProductoFinal;
@@ -33,8 +52,26 @@ function agregarAlCarrito(producto){
   }
 }
 
-
 function restarAlCarrito(producto){
+  Toastify({
+    text: "Producto eliminado",
+    duration: 3000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: " #ee6130",
+      borderRadius: "2rem",
+      textTransform: "uppercase",
+      fontSize: ".75rem"
+    },
+    offset: {
+        x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      },
+    onClick: function(){} // Callback after click
+  }).showToast();
   let memoria = JSON.parse(localStorage.getItem(keyLocalstorage));
   if(!memoria) return console.warn("Error restando al carrito: Carrito no encontrado en memoria")
   let cantidadProductoFinal = 0;
@@ -50,13 +87,11 @@ function restarAlCarrito(producto){
   return cantidadProductoFinal;
 }
 
-
 function getNuevoProductoParaMemoria(producto){
   const nuevoProducto = producto;
   nuevoProducto.cantidad = 1;
   return nuevoProducto;
 }
-
 
 function actualizarNumeroCarrito(){
   let cuenta = 0;
@@ -75,4 +110,6 @@ function reiniciarCarrito(){
 }
 
 
+
 actualizarNumeroCarrito();
+
